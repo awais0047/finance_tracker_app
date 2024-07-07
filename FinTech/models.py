@@ -1,6 +1,9 @@
 from django.db import models
 from datetime import date, datetime
 from django.contrib.auth.models import User
+from django.db import models
+from django.utils import timezone
+
 
 
 
@@ -20,7 +23,7 @@ class ExpenseCategory(models.Model):
 class Income(models.Model):
     user = models.ForeignKey(User, related_name='user_name', on_delete=models.CASCADE)
     name= models.CharField(max_length=50)
-    date = models.DateField(default=date.today())
+    date = models.DateTimeField(default=timezone.now)
     amount= models.FloatField()
     category = models.ForeignKey(IncomeCategory, related_name='income_catg', on_delete=models.CASCADE)
     note=models.TextField()
@@ -32,7 +35,7 @@ class Income(models.Model):
 class Expense(models.Model):
     user =models.ForeignKey(User,  related_name='Exp_user_name', on_delete=models.CASCADE)
     name= models.CharField(max_length=50)
-    date = models.DateField(default=date.today())
+    date = models.DateTimeField(default=timezone.now)
     amount= models.FloatField()
     category = models.ForeignKey(ExpenseCategory, related_name='expense_catg', on_delete=models.CASCADE)
     note=models.TextField()
