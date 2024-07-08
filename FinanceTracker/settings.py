@@ -26,6 +26,10 @@ SECRET_KEY = 'django-insecure-s!ypkaq&(k1ew44f4+qy2p$i=*jh9jz0&7(pmw#q-p7r781pc-
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
+INTERNAL_IPS = [
+    '127.0.0.1',
+    # Add other internal IPs if needed
+]
 
 CSRF_TRUSTED_ORIGINS = [
     'https://fintech.chetanrathod.me',
@@ -41,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'debug_toolbar'
 ]
 
 MIDDLEWARE = [
@@ -51,6 +56,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
+
 ]
 
 ROOT_URLCONF = 'FinanceTracker.urls'
