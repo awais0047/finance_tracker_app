@@ -2,7 +2,6 @@
 from django.urls import path
 from . import views
 
-print('we are to build something new ')
 
 urlpatterns = [
     path('dashboard',views.dashboard,name="dashboard"),
