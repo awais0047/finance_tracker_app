@@ -395,6 +395,7 @@ def signup(request):
 # Profile
 def profile(request):
     if request.user.is_authenticated:
+        print('yes we are ok')
         profile= User.objects.get(id=request.user.id)
         account= Account.objects.get(user=request.user.id)
         if request.method== "POST":
