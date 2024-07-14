@@ -18,7 +18,8 @@ RUN pip install -r requirements.txt
 COPY . /app/
 
 # Ensure the test.sh script is executable
-RUN chmod +x /app/FinanceTracker/FinTech/test.sh
+RUN chmod +x /app/FinanceTracker/test.sh
+
 
 # Command to run the application (this can be overridden in the docker run command)
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
