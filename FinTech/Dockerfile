@@ -13,15 +13,12 @@ COPY requirements.txt /app/
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
-
-
 # Copy the project files
 COPY . /app/
 
 # Ensure test.sh is executable
 RUN chmod +x /app/FinanceTracker/FinTech/test.sh
 
-# Expose port 8000 for the app
 EXPOSE 8000
 
 # Run the app
