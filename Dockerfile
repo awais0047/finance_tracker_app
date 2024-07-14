@@ -1,14 +1,12 @@
-# Use the official Python image from the Docker Hub
+# Dockerfile
+
 FROM python:3.9-slim
 
-# Set environment variables
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
-
-# Create a directory for the app
 WORKDIR /app
 
-# Install dependencies
+# Install system dependencies
+RUN apt-get update && apt-get install -y libpq-dev gcc
+
 COPY requirements.txt /app/
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
@@ -16,10 +14,5 @@ RUN pip install -r requirements.txt
 # Copy the project files
 COPY . /app/
 
-# Ensure test.sh is executable
-RUN chmod +x /app/FinanceTracker/FinTech/test.sh
-
-EXPOSE 8000
-
-# Run the app
+# Command to run the application
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
