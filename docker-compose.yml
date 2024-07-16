@@ -15,7 +15,7 @@ services:
       - POSTGRES_DB=finance_tracker
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=123
-      - POSTGRES_HOST=localhost
+      - POSTGRES_HOST=host.docker.internal
       - POSTGRES_PORT=5432
     depends_on:
       - db

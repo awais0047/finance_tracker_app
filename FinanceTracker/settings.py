@@ -91,7 +91,7 @@ DATABASES = {
         'NAME': 'finance_tracker',
         'USER': 'postgres',
         'PASSWORD': 123,
-        'HOST': 'localhost',
+        'HOST': 'host.docker.internal',
         'PORT': 5432,
     }
 }
