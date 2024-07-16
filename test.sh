@@ -26,7 +26,6 @@ ls -l
 # Simulate a test assertion (replace with actual tests)
 echo "Running sample test assertion..."
 # Example: check if a specific file exists
-fi
 
 echo "All tests completed successfully."
 
