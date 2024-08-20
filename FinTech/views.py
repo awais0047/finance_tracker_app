@@ -422,6 +422,8 @@ def login(request):
         username = request.POST['email']
         password = request.POST['password']
 
+        
+
         user= auth.authenticate(username=username,password=password)
 
         if user is not None:
